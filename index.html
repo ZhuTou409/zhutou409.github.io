@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111518">
+  <meta name="description" content="技术美术作品集：水体与海岸、天空与天气、草地与植被、地表材质、角色渲染。">
+  <title>技术美术作品集</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111518'/%3E%3Cpath d='M7 10h18M16 10v14M7 22l9-12 9 12' fill='none' stroke='%23a7e8ce' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="projects.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#works">跳到作品</a>
+  <header class="site-header">
+    <a class="identity" href="#top" aria-label="技术美术作品集首页"><span class="mark" aria-hidden="true">TA<span></span></span><h1>技术美术<span class="identity-sub">作品集</span></h1></a>
+    <nav aria-label="主导航"><a href="#works">作品</a></nav>
+  </header>
+  <main id="top">
+    <section class="portfolio" id="works" aria-label="作品">
+      <article class="project featured">
+        <div class="media-wrap">
+          <button class="artwork" data-project="water" aria-label="查看水体与海岸作品">
+            <video class="preview-video" poster="media/image2.webp" data-src="media/image2.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span>
+          </button>
+          <button class="motion-toggle" aria-label="暂停水体预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button>
+        </div>
+        <div class="project-caption"><button data-project="water"><h2>水体与海岸</h2><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+      </article>
+      <div class="project-grid">
+        <article class="project">
+          <div class="media-wrap"><button class="artwork" data-project="sky" aria-label="查看天空与天气作品"><img src="media/image7.webp" width="2260" height="968" alt="夕阳下的风格化天空与云层" loading="lazy"><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button></div>
+          <div class="project-caption"><button data-project="sky"><h2>天空与天气</h2><span class="caption-meta">TOD <span class="caption-arrow" aria-hidden="true">↗</span></span></button></div>
+        </article>
+        <article class="project">
+          <div class="media-wrap"><button class="artwork" data-project="vegetation" aria-label="查看草地与植被作品"><video class="preview-video" poster="media/image13.webp" data-src="media/image13.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button><button class="motion-toggle" aria-label="暂停植被预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
+          <div class="project-caption"><button data-project="vegetation"><h2>草地与植被</h2><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+        </article>
+        <article class="project">
+          <div class="media-wrap"><button class="artwork" data-project="ground" aria-label="查看地表材质作品"><img src="media/image23.webp" width="1237" height="434" alt="石板路上的水坑与地表材质" loading="lazy"><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button></div>
+          <div class="project-caption"><button data-project="ground"><h2>地表材质</h2><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+        </article>
+        <article class="project">
+          <div class="media-wrap"><button class="artwork" data-project="character" aria-label="查看角色渲染作品"><img src="media/image26.webp" width="1423" height="749" alt="NPR渲染管线下的风格化角色" loading="lazy"><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button></div>
+          <div class="project-caption"><button data-project="character"><h2>角色渲染</h2><span class="caption-meta">NPR / PBR <span class="caption-arrow" aria-hidden="true">↗</span></span></button></div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>技术美术作品集</span><a href="#top">返回顶部 ↑</a></footer>
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="detail-title">
+    <header class="dialog-header"><span id="detail-category"></span><button class="close-dialog" aria-label="关闭作品详情">关闭 <span aria-hidden="true">×</span></button></header>
+    <div class="detail-content"><div class="detail-intro"><h2 id="detail-title"></h2><p id="detail-description"></p></div><div id="detail-gallery"></div></div>
+  </dialog>
+</body>
+</html>
