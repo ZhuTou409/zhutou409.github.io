@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111518">
-  <meta name="description" content="技术美术作品集：水体与海岸、天空与天气、草地与植被、地表材质、角色渲染。">
-  <title>技术美术作品集</title>
+  <meta name="description" content="朱文正的技术美术作品集：Prometheus（2025.12–2026.09）、VoxelPlanet（2025.01–2025.05）、VoxelLandscape（2024.07–2025.01）。角色渲染、环境、PCG 星球与体素地形。">
+  <title>朱文正 · 作品集</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111518'/%3E%3Cpath d='M7 10h18M16 10v14M7 22l9-12 9 12' fill='none' stroke='%23a7e8ce' stroke-width='2'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
   <script src="projects.js" defer></script>
@@ -14,42 +14,152 @@
 <body>
   <a class="skip-link" href="#works">跳到作品</a>
   <header class="site-header">
-    <a class="identity" href="#top" aria-label="技术美术作品集首页"><span class="mark" aria-hidden="true">TA<span></span></span><h1>技术美术<span class="identity-sub">作品集</span></h1></a>
-    <nav aria-label="主导航"><a href="#works">作品</a></nav>
+    <a class="identity" href="#top" aria-label="朱文正作品集首页"><span class="mark" aria-hidden="true">TA<span></span></span><span class="identity-name">朱文正<span class="identity-sub">技术美术</span></span></a>
+    <nav aria-label="主导航"><a href="#works">作品 <span aria-hidden="true">↘</span></a></nav>
   </header>
   <main id="top">
-    <section class="portfolio" id="works" aria-label="作品">
+    <section class="hero" aria-roledescription="轮播" aria-label="作品精选" tabindex="0">
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide is-active" data-label="角色渲染 / NPR · PBR">
+          <img src="media/prometheus/character/npr-render.webp" width="1423" height="749" alt="" fetchpriority="high">
+        </div>
+        <div class="hero-slide" data-label="水体与海岸 / 动态展示">
+          <video poster="media/prometheus/water/waves.webp" data-src="media/prometheus/water/waves.mp4" muted loop playsinline preload="none"></video>
+        </div>
+        <div class="hero-slide" data-label="TOD">
+          <img src="media/prometheus/tod/sunset.webp" width="2260" height="968" alt="" loading="lazy">
+        </div>
+        <div class="hero-slide" data-label="草地与植被 / 动态展示">
+          <video poster="media/prometheus/vegetation/wind-field.webp" data-src="media/prometheus/vegetation/wind-field.mp4" muted loop playsinline preload="none"></video>
+        </div>
+        <div class="hero-slide" data-label="VoxelPlanet / 星球大气">
+          <img src="media/voxel-planet/atmosphere/atmosphere.webp" width="1494" height="623" alt="" loading="lazy">
+        </div>
+        <div class="hero-slide" data-label="VoxelLandscape / 草地挖洞">
+          <video poster="media/voxel-landscape/terrain/grass-excavation.webp" data-src="media/voxel-landscape/terrain/grass-excavation.mp4" muted loop playsinline preload="none"></video>
+        </div>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content page-width">
+        <p class="eyebrow">TECHNICAL ART PORTFOLIO</p>
+        <h1>朱文正 <span>作品集</span></h1>
+        <div class="hero-bottom">
+          <a class="explore-link" href="#works">探索作品 <span aria-hidden="true">↓</span></a>
+          <div class="hero-controls" aria-label="轮播控制">
+            <span class="hero-slide-label">角色渲染 / NPR · PBR</span>
+            <div class="hero-dots" aria-label="选择画面">
+              <button class="hero-dot is-active" data-slide="0" aria-label="切换到角色渲染" aria-pressed="true"></button>
+              <button class="hero-dot" data-slide="1" aria-label="切换到水体与海岸" aria-pressed="false"></button>
+              <button class="hero-dot" data-slide="2" aria-label="切换到TOD" aria-pressed="false"></button>
+              <button class="hero-dot" data-slide="3" aria-label="切换到草地与植被" aria-pressed="false"></button>
+              <button class="hero-dot" data-slide="4" aria-label="切换到 VoxelPlanet 星球大气" aria-pressed="false"></button>
+              <button class="hero-dot" data-slide="5" aria-label="切换到 VoxelLandscape 草地挖洞" aria-pressed="false"></button>
+            </div>
+            <span class="hero-count" aria-hidden="true"><span id="hero-current">01</span> / <span id="hero-total">06</span></span>
+            <button class="hero-arrow" data-direction="-1" aria-label="上一张画面">←</button>
+            <button class="hero-arrow" data-direction="1" aria-label="下一张画面">→</button>
+            <button class="hero-pause" aria-label="暂停轮播" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="work-layout page-width" id="works">
+      <aside class="project-timeline" aria-label="项目时间轴">
+        <div class="timeline-sticky">
+          <p class="eyebrow">项目时间轴</p>
+          <a class="timeline-entry" href="#prometheus" aria-current="location">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <span class="timeline-dates"><time datetime="2025-12">2025.12</time><span>—</span><time datetime="2026-09">2026.09</time></span>
+            <span class="timeline-name">Prometheus</span>
+            <span class="timeline-note">技术美术 · 5 个作品板块</span>
+          </a>
+          <a class="timeline-entry" href="#voxel-planet">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <span class="timeline-dates"><time datetime="2025-01">2025.01</time><span>—</span><time datetime="2025-05">2025.05</time></span>
+            <span class="timeline-name">VoxelPlanet</span>
+            <span class="timeline-note">PCG · 星球 · 5 个作品板块</span>
+          </a>
+          <a class="timeline-entry" href="#voxel-landscape">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <span class="timeline-dates"><time datetime="2024-07">2024.07</time><span>—</span><time datetime="2025-01">2025.01</time></span>
+            <span class="timeline-name">VoxelLandscape</span>
+            <span class="timeline-note">体素地形 · 2 个作品板块</span>
+          </a>
+        </div>
+      </aside>
+      <div class="project-collections">
+      <section class="portfolio" id="prometheus" aria-labelledby="project-heading">
+        <header class="works-heading"><div><p class="eyebrow">SELECTED WORKS / 01</p><h2 id="project-heading">Prometheus</h2></div><span class="works-count">05 个作品板块</span></header>
       <article class="project featured">
         <div class="media-wrap">
-          <button class="artwork" data-project="water" aria-label="查看水体与海岸作品">
-            <video class="preview-video" poster="media/image2.webp" data-src="media/image2.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+          <button class="artwork" data-project="character" aria-label="查看角色渲染作品">
+            <img src="media/prometheus/character/npr-render.webp" width="1423" height="749" alt="NPR渲染管线下的风格化角色" loading="lazy">
             <span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span>
           </button>
-          <button class="motion-toggle" aria-label="暂停水体预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button>
         </div>
-        <div class="project-caption"><button data-project="water"><h2>水体与海岸</h2><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+        <div class="project-caption"><button data-project="character"><h3>角色渲染</h3><span class="caption-meta">NPR / PBR <span class="caption-arrow" aria-hidden="true">↗</span></span></button></div>
       </article>
       <div class="project-grid">
         <article class="project">
-          <div class="media-wrap"><button class="artwork" data-project="sky" aria-label="查看天空与天气作品"><img src="media/image7.webp" width="2260" height="968" alt="夕阳下的风格化天空与云层" loading="lazy"><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button></div>
-          <div class="project-caption"><button data-project="sky"><h2>天空与天气</h2><span class="caption-meta">TOD <span class="caption-arrow" aria-hidden="true">↗</span></span></button></div>
+          <div class="media-wrap"><button class="artwork" data-project="water" aria-label="查看水体与海岸作品"><video class="preview-video" poster="media/prometheus/water/waves.webp" data-src="media/prometheus/water/waves.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button><button class="motion-toggle" aria-label="暂停水体预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
+          <div class="project-caption"><button data-project="water"><h3>水体与海岸</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
         </article>
         <article class="project">
-          <div class="media-wrap"><button class="artwork" data-project="vegetation" aria-label="查看草地与植被作品"><video class="preview-video" poster="media/image13.webp" data-src="media/image13.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button><button class="motion-toggle" aria-label="暂停植被预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
-          <div class="project-caption"><button data-project="vegetation"><h2>草地与植被</h2><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+          <div class="media-wrap"><button class="artwork" data-project="tod" aria-label="查看TOD作品"><img src="media/prometheus/tod/sunset.webp" width="2260" height="968" alt="夕阳下的风格化天空与云层" loading="lazy"><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button></div>
+          <div class="project-caption"><button data-project="tod"><h3>TOD</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
         </article>
         <article class="project">
-          <div class="media-wrap"><button class="artwork" data-project="ground" aria-label="查看地表材质作品"><img src="media/image23.webp" width="1237" height="434" alt="石板路上的水坑与地表材质" loading="lazy"><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button></div>
-          <div class="project-caption"><button data-project="ground"><h2>地表材质</h2><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+          <div class="media-wrap"><button class="artwork" data-project="vegetation" aria-label="查看草地与植被作品"><video class="preview-video" poster="media/prometheus/vegetation/wind-field.webp" data-src="media/prometheus/vegetation/wind-field.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button><button class="motion-toggle" aria-label="暂停植被预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
+          <div class="project-caption"><button data-project="vegetation"><h3>草地与植被</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
         </article>
         <article class="project">
-          <div class="media-wrap"><button class="artwork" data-project="character" aria-label="查看角色渲染作品"><img src="media/image26.webp" width="1423" height="749" alt="NPR渲染管线下的风格化角色" loading="lazy"><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button></div>
-          <div class="project-caption"><button data-project="character"><h2>角色渲染</h2><span class="caption-meta">NPR / PBR <span class="caption-arrow" aria-hidden="true">↗</span></span></button></div>
+          <div class="media-wrap"><button class="artwork" data-project="ground" aria-label="查看地表材质作品"><img src="media/prometheus/ground/puddles-stone-path.webp" width="1237" height="434" alt="石板路上的水坑与地表材质" loading="lazy"><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button></div>
+          <div class="project-caption"><button data-project="ground"><h3>地表材质</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
         </article>
       </div>
-    </section>
+      </section>
+      <section class="portfolio" id="voxel-planet" aria-labelledby="planet-heading">
+        <header class="works-heading"><div><p class="eyebrow">SELECTED WORKS / 02</p><h2 id="planet-heading">VoxelPlanet</h2></div><span class="works-count">05 个作品板块</span></header>
+        <article class="project featured">
+          <div class="media-wrap"><button class="artwork" data-project="planet-pcg" aria-label="查看 PCG 星球作品"><img src="media/voxel-planet/pcg/planet-overview.webp" width="971" height="556" alt="PCG 生成的星球与地表植被" loading="lazy"><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button></div>
+          <div class="project-caption"><button data-project="planet-pcg"><h3>PCG 星球</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+        </article>
+        <div class="project-grid">
+          <article class="project">
+            <div class="media-wrap"><button class="artwork" data-project="planet-atmosphere" aria-label="查看大气与黄昏作品"><img src="media/voxel-planet/atmosphere/atmosphere.webp" width="1494" height="623" alt="星球大气与光照效果" loading="lazy"><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button></div>
+            <div class="project-caption"><button data-project="planet-atmosphere"><h3>大气与黄昏</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="project">
+            <div class="media-wrap"><button class="artwork" data-project="planet-excavation" aria-label="查看星球体素挖掘作品"><video class="preview-video" poster="media/voxel-planet/excavation/digging-01.webp" data-src="media/voxel-planet/excavation/digging-01.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button><button class="motion-toggle" aria-label="暂停星球挖掘预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
+            <div class="project-caption"><button data-project="planet-excavation"><h3>体素挖掘</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="project">
+            <div class="media-wrap"><button class="artwork" data-project="planet-movement" aria-label="查看行走与避障作品"><video class="preview-video" poster="media/voxel-planet/movement/walking.webp" data-src="media/voxel-planet/movement/walking.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button><button class="motion-toggle" aria-label="暂停行走预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
+            <div class="project-caption"><button data-project="planet-movement"><h3>行走与避障</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="project">
+            <div class="media-wrap"><button class="artwork" data-project="planet-interaction" aria-label="查看群体受击作品"><video class="preview-video" poster="media/voxel-planet/interaction/crowd-hit.webp" data-src="media/voxel-planet/interaction/crowd-hit.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button><button class="motion-toggle" aria-label="暂停群体受击预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
+            <div class="project-caption"><button data-project="planet-interaction"><h3>群体受击</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+          </article>
+        </div>
+      </section>
+      <section class="portfolio" id="voxel-landscape" aria-labelledby="landscape-heading">
+        <header class="works-heading"><div><p class="eyebrow">SELECTED WORKS / 03</p><h2 id="landscape-heading">VoxelLandscape</h2></div><span class="works-count">02 个作品板块</span></header>
+        <div class="project-grid">
+          <article class="project">
+            <div class="media-wrap"><button class="artwork" data-project="landscape-network" aria-label="查看体素挖掘与网络同步作品"><video class="preview-video" poster="media/voxel-landscape/network/network-digging.webp" data-src="media/voxel-landscape/network/network-digging.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button><button class="motion-toggle" aria-label="暂停网络同步预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
+            <div class="project-caption"><button data-project="landscape-network"><h3>体素挖掘与网络同步</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="project">
+            <div class="media-wrap"><button class="artwork" data-project="landscape-excavation" aria-label="查看草地挖洞作品"><video class="preview-video" poster="media/voxel-landscape/terrain/grass-excavation.webp" data-src="media/voxel-landscape/terrain/grass-excavation.mp4" muted loop playsinline preload="none" aria-hidden="true"></video><span class="view-hint" aria-hidden="true">查看作品 <span>↗</span></span></button><button class="motion-toggle" aria-label="暂停草地挖洞预览" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
+            <div class="project-caption"><button data-project="landscape-excavation"><h3>草地挖洞</h3><span class="caption-arrow" aria-hidden="true">↗</span></button></div>
+          </article>
+        </div>
+      </section>
+      </div>
+    </div>
   </main>
-  <footer class="site-footer"><span>技术美术作品集</span><a href="#top">返回顶部 ↑</a></footer>
+  <footer class="site-footer"><span>朱文正 · 技术美术作品集</span><a href="#top">返回顶部 ↑</a></footer>
   <dialog class="project-dialog" id="project-dialog" aria-labelledby="detail-title">
     <header class="dialog-header"><span id="detail-category"></span><button class="close-dialog" aria-label="关闭作品详情">关闭 <span aria-hidden="true">×</span></button></header>
     <div class="detail-content"><div class="detail-intro"><h2 id="detail-title"></h2><p id="detail-description"></p></div><div id="detail-gallery"></div></div>
